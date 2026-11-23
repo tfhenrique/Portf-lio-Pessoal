@@ -42,12 +42,12 @@ def sobre():
         "Git & GitHub",
         "Resolução de problemas",
     ]
-    return render_template("sobre.html", competencias=competencias)
+    return render_template("about.html", competencias=competencias)
 
 
 @app.route("/projectos")
 def projectos():
-    return render_template("project.html", projectos=PROJECTOS)
+    return render_template("projects.html", projectos=PROJECTOS)
 
 
 @app.route("/projecto/<int:id>")
