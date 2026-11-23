@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Sobre Mim — Portfólio Pessoal{% endblock %}
+
+{% block content %}
+<section class="seccao">
+    <h1>Sobre Mim</h1>
+    <p>Escreve aqui um parágrafo real sobre o teu percurso, o que estás a aprender e que tipo de projetos gostas de construir.</p>
+
+    <h2>Competências e Ferramentas</h2>
+    <ul class="lista-tags">
+        {% for comp in competencias %}
+        <li class="tag">{{ comp }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Objetivos</h2>
+    <p>Partilha os teus próximos passos na área tecnológica, projetos futuros ou áreas de especialização que pretendes explorar.</p>
+</section>
+{% endblock %}

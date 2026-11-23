@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}{{ projecto.titulo }} — Portfólio Pessoal{% endblock %}
+
+{% block content %}
+<section class="seccao">
+    <a class="link-voltar" href="{{ url_for('projectos') }}">← Voltar aos projectos</a>
+    <h1>{{ projecto.titulo }}</h1>
+    <p><strong>Ano:</strong> {{ projecto.ano }}</p>
+    <p><strong>Tecnologias:</strong> {{ projecto.tecnologias | join(", ") }}</p>
+    <div class="caixa-descricao">
+        <p>{{ projecto.descricao }}</p>
+    </div>
+</section>
+{% endblock %}

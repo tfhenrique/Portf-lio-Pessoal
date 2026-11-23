@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Início — Portfólio Pessoal{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-texto">
+        <h1>Olá, sou [O Teu Nome]</h1>
+        <p>Estou a desenvolver as minhas competências em desenvolvimento web e Python com Flask, criando soluções práticas e bem estruturadas.</p>
+        <div class="hero-acoes">
+            <a class="btn" href="{{ url_for('projectos') }}">Ver Projectos</a>
+            <a class="btn btn-secundario" href="{{ url_for('sobre') }}">Sobre Mim</a>
+        </div>
+    </div>
+    <div class="hero-imagem">
+        <!-- Coloca uma imagem em static/images/foto.jpg ou altera o nome do ficheiro -->
+        <img src="{{ url_for('static', filename='images/foto.jpg') }}" alt="Foto de perfil">
+    </div>
+</section>
+
+<section class="seccao">
+    <h2>Projectos em Destaque</h2>
+    <div class="grid-cartoes">
+        {% for p in projectos %}
+        <article class="cartao">
+            <h3>{{ p.titulo }}</h3>
+            <p>{{ p.resumo }}</p>
+            <a class="link-detalhe" href="{{ url_for('detalhe_projecto', id=p.id) }}">Ver detalhes →</a>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

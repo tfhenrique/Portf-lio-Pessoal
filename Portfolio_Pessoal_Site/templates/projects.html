@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Projectos — Portfólio Pessoal{% endblock %}
+
+{% block content %}
+<section class="seccao">
+    <h1>Projectos</h1>
+    <p>Consulta os meus projetos e clica em qualquer um para ver mais detalhes.</p>
+
+    <div class="grid-cartoes">
+        {% for p in projectos %}
+        <article class="cartao">
+            <span class="badge">{{ p.ano }}</span>
+            <h2>{{ p.titulo }}</h2>
+            <p>{{ p.resumo }}</p>
+            <p class="tec-linha"><strong>Tecnologias:</strong> {{ p.tecnologias | join(", ") }}</p>
+            <a class="btn" href="{{ url_for('detalhe_projecto', id=p.id) }}">Abrir projecto</a>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
